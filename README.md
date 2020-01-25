@@ -4,32 +4,32 @@
 
 [BackEnd Web API](https://aspnetcorews-backend.azurewebsites.net) | [FrontEnd Web App](https://aspnetcorews-frontend.azurewebsites.net)
 
-## Setup
+## Configuração
 
-[Download](https://www.microsoft.com/net/download) and install the .NET Core SDK and Visual Studio.
+[Baixe](https://www.microsoft.com/net/download) e instale o .NET Core SDK e o Visual Studio.
 
-> Note: When installing Visual Studio you only need to install the `ASP.NET and web development` workload.
+> Nota: Ao instalar o Visual Studio, você só precisa instalar o workload `ASP.NET e desenvolvimento da web`.
 
-If you have issues downloading the installers we may have USB sticks with offline installers for you to use.
+Se você tiver problemas para baixar os instaladores, podemos ter pen drives com instaladores offline para você usar.
 
-## What you'll be building
-In this workshop, you'll learn by building a full-featured ASP.NET Core application from scratch. We'll start from File/ New and build up to an API back-end application, a web front-end application, and a common library for shared data transfer objects using .NET Standard.
+## O que você estará construindo
+Neste workshop, você aprenderá criando um aplicativo ASP.NET Core completo do zero. Começaremos em Arquivo/Novo e criaremos um aplicativo de back-end da API, um aplicativo de front-end da Web e uma biblioteca comum para objetos de transferência de dados compartilhados usando o .NET Standard.
 
-### Application Architecture
-![Architecture Diagram](/docs/images/ConferencePlannerArchitectureDiagram.svg)
+### Arquitetura da Aplicação
+![Diagrama da arquitetura](/docs/images/ConferencePlannerArchitectureDiagram.svg)
 
-### Database Schema
-![Database Schema Diagram](/docs/conference-planner-db-diagram.png)
+### Schema de Banco de Dados
+![Diagrama do Schema de Banco de Dados](/docs/conference-planner-db-diagram.png)
 
-## Sessions
+## Sessões
 
-| Session | Topics |
+| Sessões | Tópicos |
 | ----- | ---- |
-| [Session #1](/docs/1.%20Create%20BackEnd%20API%20project.md) | Build the back-end API with basic EF model |
-| [Session #2](/docs/2.%20Build%20out%20BackEnd%20and%20Refactor.md) | Finish the back-end API and EF model, refactor into view models |  |
-| [Session #3](/docs/3.%20Add%20front-end%2C%20render%20agenda%2C%20set%20up%20front-end%20models.md) | Add front-end, render agenda, set up front-end models |
-| [Session #4](/docs/4.%20Add%20auth%20features.md) | Add authentication, add admin policy, allow editing sessions, users can sign-in with Identity, custom auth tag helper |
-| [Session #5](/docs/5.%20Add%20personal%20agenda.md) | Add user association and personal agenda |
-| [Session #6](docs/6.%20Production%20Readiness%20and%20Deployment.md) | Deployment, Azure and other production environments, configuring environments, diagnostics |
-| [Session #7](/docs/7.%20Challenges.md) | Challenges |
-| [Session #8](/docs/8.%20SPA%20FrontEnd.md) | SPA front-end |
+| [Sessão #1](/docs/1.%20Create%20BackEnd%20API%20project.md) | Construir a API back-end com o modelo básico do EF |
+| [Sessão #2](/docs/2.%20Build%20out%20BackEnd%20and%20Refactor.md) | Concluir a API de back-end e o modelo EF, refatorar para view models |  |
+| [Sessão #3](/docs/3.%20Add%20front-end%2C%20render%20agenda%2C%20set%20up%20front-end%20models.md) | Adicionar o front-end, renderizar a agenda, configurar os modelos no front-end |
+| [Sessão #4](/docs/4.%20Add%20auth%20features.md) | Adicionar autenticação, adicionar política de administrador, permitir edição de sessões, os usuários podem entrar com Identity, tag helper de autenticação personalizada |
+| [Sessão #5](/docs/5.%20Add%20personal%20agenda.md) | Adicionar associação de usuários e agenda pessoal |
+| [Sessão #6](docs/6.%20Production%20Readiness%20and%20Deployment.md) | Implantação, Azure e outros ambientes de produção, ambientes de configuração, diagnóstico |
+| [Sessão #7](/docs/7.%20Challenges.md) | Desafios |
+| [Sessão #8](/docs/8.%20SPA%20FrontEnd.md) | SPA front-end |
