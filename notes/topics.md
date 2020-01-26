@@ -1,36 +1,36 @@
 ## Backend
- - APIs talking to EF
- - Returning DTOs
- - Accepting DTOs to prevent over binding
+ - APIs conversando com o EF
+ - Retornando DTOs
+ - Aceitando DTOs para evitar o excesso de vínculos
  - CRUD
  - AsNoTracking
  - Include
- - EF with Many to Many
- - OnModelCreating and entity mapping
+ - EF com Muitos para Muitos
+  - OnModelCreating e mapeamento de entidade
  - Migrations
  - async Action methods
- - Swashbuckle and Swagger
- - Configuring the URL
+ - Swashbuckle e Swagger
+ - Configurando a URL
  - Seeding data
- - Search
+ - Buscando
  
  ## ConferenceDTO
  - .NET Standard 2.0 library
- - APIs are back in .NET Standard 2.0
+ - APIs estão devolta no .NET Standard 2.0
  - Model Metadata
  
  ## FrontEnd
  - User Secrets
  - Razor Pages
- - Custom Tag Helpers
- - Custom Filter
- - Validation in forms
+ - Tag Helpers Customizados
+ - Filter Customizados
+ - Validação em formulários
  - Logging
- - Outgoing HttpClient calls with JSON
- - Configuration in DI
- - Authentication (new system in 2.0)
+ - Chamadas Outgoing HttpClient com JSON
+ - Configuração em DI
+ - Authenticação (sistema novo no 2.0)
    - Cookies
-   - Adding Twitter and Google support
+   - Adicionando suporte ao Twitter e ao Google
 - Status Code pages
 - Error page
  
@@ -39,24 +39,24 @@
  - Unit testing Pages
  
  
- ## Extra credit
+ ## Creditos Extra
 
-- Add local user accounts using ASP.NET Core Identity
-- Add 3rd party logger (serilog) and disable built in console logging
-- Add image upload to Speaker entity
-- Add caching to front end (memory cache and distributed cache)
-- Make the site work for multiple conferences
-  - Add conference date
-  - Make the home page show upcoming conferences (instead of agenda) and move agenda to separate page
-- Make the names slugs instead of using ids to navigate entities
-- Add `ILogger` support to ApiClient implementation 
-- Allow Markdown for the Abstract using a custom markdown tag helper
-- Add date filtering to the backend (instead of doing it in the front end)
-- Add paging to the back end
-- Use postgres instead of SQL server or SQLite
-- Add admin pages to manage:
-  - Tracks
-  - Attendees
-  - Conferences
-  - Sessions
+- Adicione contas de usuário local usando o ASP.NET Core Identity
+- Adicione um log de terceiros (serilog) e desative o log do console embutido
+- Adicionar upload de imagem à entidade Speaker
+- Adicione cache ao front-end (cache de memória e cache distribuído)
+- Faça o site funcionar para várias conferências
+  - Adicionar data da conferência
+  - Faça com que a página inicial mostre as próximas conferências (em vez da agenda) e mova a agenda para a página separada
+- Crie slugs dos nomes em vez de usar ids para navegar pelas entidades
+- Adicione o suporte do `ILogger` à implementação do ApiClient
+- Permitir Markdown para o Abstract usando um tag helper personalizado para markdown
+- Adicione a filtro por datas ao back-end (em vez de fazer isso no front-end)
+- Adicionar paginação ao backend
+- Use postgres em vez de SQL server ou SQLite
+- Adicione páginas de administrador para gerenciar:
+  - Palestras
+  - Participantes
+  - Conferências
+  - Sessões
 
