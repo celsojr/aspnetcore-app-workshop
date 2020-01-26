@@ -1,76 +1,75 @@
-# Session 1
+# Sessão 1
 
 - Intro
-	- Show the API startup, explain configuration is injected into the Startup class
-	- Explain MVC CompatibilityVersion
-	- Show the ValuesController
-- EntityFramework basics
-	- Explain that a DbContext maps to the database
-	- Explain that a DbSet maps to a table
-	- Explain how DataAnnotations are used to model the database
-	- Explain how migrations work at a high level
-		- There's an up migration and a down migration (but nobody ever uses down migrations in production)
-		- EF stores the current model state in the database and compares it to the model in source
-	- Explain how wiring up the DbContext makes it available anywhere.
+    - Mostre a inicialização da API, explique que a configuração é injetada na classe Startup
+    - Explique o MVC CompatibilityVersion
+    - Mostre o ValuesController
+- Noções básicas do EntityFramework
+    - Explique que um DbContext mapeia para o banco de dados
+    - Explique que um DbSet mapeia para uma tabela
+    - Explique como as DataAnnotations são usadas para modelar o banco de dados
+    - Explique como as migrações funcionam em alto nível
+        - Há uma migração para cima e uma migração para baixo (mas ninguém nunca usa migrações para baixo na produção)
+        - EF armazena o estado atual do modelo no banco de dados e o compara ao modelo na origem
+    - Explique como a conexão do DbContext o torna disponível em qualquer lugar.
 - Scaffolding
-	- Show scaffolding support in VS
-	- Show the command line version
+    - Mostrar suporte ao Scaffolding no VS
+    - Mostrar a versão da linha de comandos
 - APIs
-    - Discuss the scaffolded code briefly
-	- Explain why ActionResult<T> exists and what the old code used to look like
-	- Explain the new API controller attribute
-	- Mention the ControllerBase base class and how it has less methods than Controller
+    - Discuta brevemente o código do Scaffolding
+    - Explique por que o ActionResult<T> existe e como era o código antigo
+    - Explique o novo API controller attribute
+    - Mencione a classe base ControllerBase e como ela possui menos métodos que o Controller
 - Swagger
-	- Explain what swagger is and how it's used
-	- Talk about the Swashbuckle library and mention NSwag (an alternate model)
-	- Talk about the new build time swagger generation support that's coming
-	- Talk about middleware order and how the redirect works
-	- Discuss and show the swagger UI
- 
-# Session 2
+    - Explique o que é arrogância e como é usada
+    - Fale sobre a biblioteca Swashbuckle e mencione o NSwag (um modelo alternativo)
+    - Fale sobre o novo suporte à geração do swagger em tempo de build que está chegando
+    - Fale sobre a ordem do middleware e como o redirecionamento funciona
+    - Discuta e mostre a interface do usuário do swagger
+
+# Sessão 2
 
 - Intro
-	- Explain that we're creating a class library to share the model types and attribute definitions between
-	the front end and back end applications.
-	- Explain what parts of the framework consume data annotations
-		- APIs use it for validation
-		- It's used as part of the swagger definition
-		- It's used to generate client side logic
-		- It's used to handle server side logic
-		- It's used to as part of the generated DDL
+    - Explique que estamos criando uma biblioteca de classes para compartilhar os tipos de modelo e as definições de atributo entre os aplicativos front-end e back-end.
+    - Explique quais partes da estrutura consomem os data annotations
+        - APIs usam para validação
+        - É usado como parte da definição do swagger
+        - É usado para gerar lógica do lado do cliente
+        - É usado para lidar com a lógica do lado do servidor
+        - É usado como parte do DDL gerado
 
 - EntityFramework
-	- Modelling a relation database using EntityFramework
-		- Show how many to many is expressed in an EF model classes (the middleware table must be explicitly modeled)
-		- Explain how each of the classes reference other entities for foreign keys
-			- This is one of the reasons why it's bad to directly return the EF models
-		- Show how the EF Model can be modifed in the DbContext
-			- Show how Session has a computed property and show how this is handled in the ModelBuilder
-			- Show how to setup unique indexes
-			- Show the intellisense for various model builder APIs
-			- Explain that the ModelBuilder can be used to fully describe the entities instead of using attributes
-	- Migrations
-		- Show how the attributes affect the migration code (and show DDL)
-		- Show creating a db script
-	- Queries
-	    - Explain AsNoTracking and why it's good for web scenarios
-		- Explain that EF 2.1 supports lazy loading and that it's off by default (https://docs.microsoft.com/en-us/ef/ef6/querying/related-data#lazy-loading)
-			- Point to best practices doc for lazy loading and serialization (https://docs.microsoft.com/en-us/ef/ef6/querying/related-data#turn-lazy-loading-off-for-serialization)
-		- Modify the EF queries and show eager loading with Include (explain how it avoids the N+1 problems with lazy loading)
-		- Show how to view the generated EF queries in logs
+    - Modelando um banco de dados relacional usando EntityFramework
+        - Mostre quantos muitos-para-muitos são expressados em uma classe de modelo EF (a tabela de middleware deve ser explicitamente modelada)
+        - Explique como cada uma das classes faz referência a outras entidades para chaves estrangeiras
+            - Essa é uma das razões pelas quais é ruim retornar diretamente os modelos EF
+        - Mostre como o modelo EF pode ser modificado no DbContext
+            - Mostre como Session tem uma propriedade computada e mostre como isso é tratado no ModelBuilder
+            - Mostre como configurar unique indexes
+            - Mostre o intellisense para várias model builder APIs
+            - Explique que o ModelBuilder pode ser usado para descrever completamente as entidades em vez de usar atributos
+    - Migrations
+        - Mostrar como os atributos afetam o código de migração (e mostrar DDL)
+        - Mostrar a criação de um script db
+    - Queries
+        - Explique o AsNoTracking e por que ele é bom para cenários da web
+        - Explique que o EF 2.1 suporta carregamento lento e que está desativado por padrão (https://docs.microsoft.com/en-us/ef/ef6/querying/related-data#lazy-loading)
+            - Aponte para o documento de práticas recomendadas para carregamento lento e serialização (https://docs.microsoft.com/en-us/ef/ef6/querying/related-data#turn-lazy-loading-off-for-serialization)
+        - Modifique as consultas EF e mostre o carregamento ágil com o Include (explique como ele evita os problemas N+1 com o carregamento lento)
+        - Mostre como visualizar as consultas EF geradas nos logs
 - APIs
-	- Show how the new API controller removes boilerplate (show the old 2.1 workshop)
-		- FromBody is inferred
-		- FromRoute is inferred if the route parameter matches the route definition
-		- ModelState.IsValue is removed
-    - Show the entities in the swagger, show how it has the entire object graph because we're returning the EF model
-	- Explain why ActionResult<T> exists and what the old code used to look like
-	- Explain how ActionResult<T> helps generate better swagger
-	- Show the swagger.json and syntax for declaring things like responses etc
-	- Show how problem details works for 400 errors
-	- Show the API convention analyzers
-	- Discuss automatic model validation
-- Misc
-   - Discuss how file upload works
-   - Explain the difference between the IFormFile (it's buffered) vs the streaming MultipartReader (https://docs.microsoft.com/en-us/aspnet/core/mvc/models/file-uploads?view=aspnetcore-2.2)
- 
+    - Mostre como o novo controlador de API remove o clichê (mostre a antiga oficina 2.1)
+        - FromBody é inferido
+        - FromRoute é inferido se o parâmetro route corresponder à definição de rota
+        - ModelState.IsValue é removido
+    - Mostre as entidades no swagger, mostre como ele tem todo o gráfico de objetos porque estamos retornando o modelo EF
+    - Explique por que o ActionResult<T> existe e como era o código antigo
+    - Explique como o ActionResult<T> ajuda a gerar um swagger melhor
+    - Mostre o swagger.json e a sintaxe para declarar coisas como respostas, etc.
+    - Mostre como os detalhes do problema funcionam para erros 400
+    - Mostre os analisadores de convenções da API
+    - Discutir validação automática de modelo
+- Diversos
+    - Discuta como funciona o upload de arquivos
+    - Explique a diferença entre o IFormFile (com buffer) e o MultipartReader de streaming (https://docs.microsoft.com/en-us/aspnet/core/mvc/models/file-uploads?view=aspnetcore-2.2)
+	
